@@ -1,9 +1,9 @@
 import "./App.css";
-import Counter from "./counter/Counter";
+import TotalCounter from "./counter/TotalCounter";
 function App() {
   return (
     <div className="container">
-      <Counter />
+      <TotalCounter />
     </div>
   );
 }

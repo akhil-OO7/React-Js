@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
-  const warning = "btn btn-warning mx-2";
-  const danger = "btn btn-danger mx-2";
+const Counter = (props) => {
+  const { counts, id } = props.counter;
+  const [count, setCount] = useState(counts);
   const decrement = () => {
     let lcount = count;
     if (lcount !== 0) setCount(lcount - 1);
@@ -24,6 +23,9 @@ const Counter = () => {
       <span className={changeColor()}>{count > 0 ? count : "zero"}</span>
       <button className="btn btn-primary" onClick={increment}>
         Increment
+      </button>
+      <button class="btn btn-danger mx-2" onClick={() => props.onDelete(id)}>
+        Delete
       </button>
     </div>
   );
