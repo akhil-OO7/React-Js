@@ -1,9 +1,9 @@
 import "./App.css";
-import TotalCounter from "./counter/TotalCounter";
+import UseStateEx1 from "./components/hooks/UseStateEx1";
 function App() {
   return (
     <div className="container">
-      <TotalCounter />
+      <UseStateEx1 />
     </div>
   );
 }
