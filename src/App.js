@@ -1,9 +1,11 @@
 import "./App.css";
-import ReadGit from "./jsons/ReadGit";
+import FormEx from "./Forms/FormEx";
+import CheckBoxEx from "./Forms/CheckBoxEx";
 function App() {
   return (
     <div className="container">
-      <ReadGit />
+      <FormEx />
+      <CheckBoxEx />
     </div>
   );
 }
