@@ -18,14 +18,17 @@ const UseStateEx1 = () => {
   };
   return (
     <div>
-      <button className="btn btn-primary" onClick={increment}>
+      <button className="btn btn-primary mx-2" onClick={increment}>
         Increment
       </button>{" "}
       {count}
-      <button className="btn btn-primary" onClick={increment5}>
+      <button className="btn btn-primary mx-2" onClick={increment5}>
         Increment +5
       </button>{" "}
-      <button className="btn btn-primary" onClick={() => setToggle(!toggle)}>
+      <button
+        className="btn btn-primary mx-2"
+        onClick={() => setToggle(!toggle)}
+      >
         Show Toggle
       </button>
       {toggle && <ToggleUseEffect />}

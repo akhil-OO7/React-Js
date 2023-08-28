@@ -8,13 +8,15 @@ const ToggleUseEffect = () => {
     setY(event.clientY);
     console.log("Inside mouseMove function");
   };
+
   useEffect(() => {
     console.log("Inside useEffect");
     window.addEventListener("mousemove", mouseMove);
-    // return () => {
-    //   window.removeEventListener("mousemove", mouseMove);
-    // };
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
   });
+
   return (
     <div>
       ToggleUseEffect

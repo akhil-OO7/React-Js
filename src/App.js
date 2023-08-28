@@ -1,9 +1,9 @@
 import "./App.css";
-import UseStateEx1 from "./components/hooks/UseStateEx1";
+import ReadGit from "./jsons/ReadGit";
 function App() {
   return (
     <div className="container">
-      <UseStateEx1 />
+      <ReadGit />
     </div>
   );
 }
