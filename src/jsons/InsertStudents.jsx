@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export const InsertStudents = () => {
   const [student, setStudent] = useState({
@@ -10,15 +11,21 @@ export const InsertStudents = () => {
     const { name, value } = e.target;
     setStudent({ ...student, [name]: value });
   };
-  //   const onSubmit = () => {
-  //     if(student.id !== 0 && student.name !== "")
-
-  //     }
-  //   };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (student.id !== 0 && student.name !== "" && student.course !== "") {
+      axios
+        .post("http://10.21.78.79:8080/students", student)
+        .then((res) => alert("Information Inserted"))
+        .catch((err) => console.log(err));
+    } else {
+      alert("Please enter information");
+    }
+  };
   return (
     <div>
       <h2> Insert Student Information</h2>
-      <form className="d-flex flex-column col-4">
+      <form className="d-flex flex-column col-4" onSubmit={onSubmit}>
         <label>Enter student id</label>
         <input
           type="text"
@@ -40,11 +47,7 @@ export const InsertStudents = () => {
           value={student.course}
           onChange={insertInfo}
         />
-        <button
-          type="submit"
-          className="btn btn-outline-warning my-3"
-          onSubmit={onSubmit}
-        >
+        <button type="submit" className="btn btn-outline-warning my-3">
           Insert Information
         </button>
       </form>
