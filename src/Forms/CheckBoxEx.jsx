@@ -13,6 +13,8 @@ const CheckBoxEx = () => {
     setLang({ ...lang, [name]: checked });
     if (checked) {
       setSelectLang([...selectLang, name]);
+    } else {
+      setSelectLang(selectLang.filter((item) => item !== name));
     }
   };
   return (
