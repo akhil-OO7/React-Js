@@ -1,9 +1,9 @@
 import "./App.css";
-import ReadGit from "./jsons/ReadGit";
+import Product from "./jsons/Product";
 function App() {
   return (
     <div className="container">
-      <ReadGit />
+      <Product />
     </div>
   );
 }

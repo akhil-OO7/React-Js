@@ -11,10 +11,13 @@ const CheckBoxEx = () => {
   const checkLang = (e) => {
     const { name, checked } = e.target;
     setLang({ ...lang, [name]: checked });
+    console.log(name, checked);
     if (checked) {
-      setSelectLang([...selectLang, name]);
+      setSelectLang((selectLang) => [...selectLang, name]);
     } else {
-      setSelectLang(selectLang.filter((item) => item !== name));
+      setSelectLang((prevSelectLang) =>
+        prevSelectLang.filter((item) => item !== name)
+      );
     }
   };
   return (
@@ -38,7 +41,14 @@ const CheckBoxEx = () => {
           <b> &nbsp; Kotlin</b>
         </div>
       </form>
-      <div>You have selected: {selectLang}</div>
+      <div>
+        You have selected:{" "}
+        {selectLang.map((item) => (
+          <ul>
+            <li> {item}</li>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };
