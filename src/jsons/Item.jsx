@@ -2,7 +2,10 @@ import React from "react";
 
 const Item = (props) => {
   return (
-    <div className="card badges bg-light m-2" style={{ width: "18rem" }}>
+    <div
+      className="card badges bg-light m-2"
+      style={{ width: "350px", height: "350px" }}
+    >
       <img
         src={props.thumbnail}
         className="card-img-top"

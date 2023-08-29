@@ -12,9 +12,9 @@ const Product = () => {
       .catch((err) => alert(err));
   }, []);
   return (
-    <div className="d-flex justify-content-center align-items-center m-2">
+    <div className="d-flex justify-content-center flex-column align-items-center m-2">
       <h1>Select your Products</h1>
-      <div>
+      <div className="d-flex justify-content-center flex-wrap align-items-center">
         {products.map((product) => (
           <Item
             thumbnail={product.thumbnail}
