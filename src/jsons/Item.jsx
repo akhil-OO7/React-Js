@@ -4,12 +4,12 @@ const Item = (props) => {
   return (
     <div
       className="card badges bg-light m-2"
-      style={{ width: "350px", height: "350px" }}
+      style={{ width: "400px", height: "400px" }}
     >
       <img
         src={props.thumbnail}
-        className="card-img-top"
-        alt="..."
+        className="card-img-top image-fluid"
+        style={{ width: "auto", height: "200px", objectFit: "cover" }}
         width="250"
         height="150px"
       />
@@ -20,11 +20,15 @@ const Item = (props) => {
             <i>{props.title}</i>
           </div>
         </h6>
-        <div className="">
-          <b>Price:</b>
-          <i>{props.price}</i>
-          <b>Rating:</b>
-          <i>{props.rating}</i>
+        <div className="d-flex justify-content-between align-items-center mb-2">
+          <b>
+            Price:
+            <i>{props.price}</i>
+          </b>
+          <b>
+            Rating:
+            <i>{props.rating}</i>
+          </b>
         </div>
         <h6 className="card-text text-start text-wrap">
           <h6 className="card-text d-flex flex-wrap">
